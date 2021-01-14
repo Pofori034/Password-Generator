@@ -14,10 +14,12 @@ class MyApp(QMainWindow):
 		self.show()
 	def generate(self):
 		self.passwordlength = self.ui.passLine.text()
+		self.ui.label.setText("")
 
 	def copy(self):
 		self.password = self.ui.password.text()
 		pyperclip.copy(self.password)
+		self.ui.label.setText("Copied!")
 
 if __name__ == '__main__':
 	app = QApplication(sys.argv)
