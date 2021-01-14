@@ -35,6 +35,3 @@ def password_generator():
 def copy_password():
     pyperclip.copy(password_generator())
 
-
-password_generator()
-copy_password()
