@@ -6,7 +6,7 @@ def generator(password_len):
     # defining  variables with all the available character
     lower = "abcdefghijklmnopqrstuvwxyz"
     upper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-    digit = "01234567890"
+    digit = "0123456789"
     symbol = "![]#$%^&*()?"
     available_characters = lower + upper + digit + symbol
 
