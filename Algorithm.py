@@ -8,11 +8,8 @@ random: a module that randomly generates items with a given length
 String: a module that converts from any datatype to a string
 password_generator function includes an algorithm that randomly generate password with a specified length
 copy_password function copies the generated password on the computer's clipboard
+NB: You need to pip install pyperclip!!!
 '''
-project_title = "Password Generator"
-project_type = "Group Project 1"
-print("==========", project_title, "==========")
-print("----------\t", project_type, " ----------")
 password_len = int(input("Enter Password Length: "))
 
 
@@ -35,3 +32,6 @@ def password_generator():
 def copy_password():
     pyperclip.copy(password_generator())
 
+
+password_generator()
+copy_password()
