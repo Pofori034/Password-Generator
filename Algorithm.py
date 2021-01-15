@@ -1,34 +1,19 @@
-import pyperclip
-import random
-import string
-
-'''
-pyperclip: a python module that copies an output onto your computer's clipboard
-random: a module that randomly generates items with a given length
-String: a module that converts from any datatype to a string
-password_generator function includes an algorithm that randomly generate password with a specified length
-copy_password function copies the generated password on the computer's clipboard
-NB: You need to pip install pyperclip!!!
-'''
-password_len = int(input("Enter Password Length: "))
+import secrets
 
 
-def password_generator():
-    generated_password = ''
+def generator(password_len):
+    password_len = int(input("Enter Password Length: "))
+    # defining  variables with all the available character
+    lower = "abcdefghijklmnopqrstuvwxyz"
+    upper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+    digit = "01234567890"
+    symbol = "![]#$%^&*()?"
+    available_characters = lower + upper + digit + symbol
 
-    count1 = 0
-    while count1 < password_len and count1 < 4:
-        generated_password += random.choice(string.ascii_uppercase + string.ascii_lowercase +
-                                            string.digits + string.punctuation)
-        count1 += 1
-    count2 = 0
-    while count2 < password_len - 4:
-        generated_password += random.choice(string.ascii_uppercase + string.ascii_lowercase +
-                                            string.digits + string.punctuation)
-        count2 += 1
-    return generated_password
+    password_str = ""
 
+    for i in range(int(password_len)):
+        password = "".join(secrets.choice(available_characters))
+        password_str += password
 
-def copy_password():
-    pyperclip.copy(password_generator())
-
+    return password_str
