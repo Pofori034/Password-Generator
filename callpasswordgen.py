@@ -2,6 +2,7 @@ import sys
 from PyQt5.QtWidgets import QApplication, QMainWindow
 import pyperclip
 import passwordgen
+import Algorithm
 
 class MyApp(QMainWindow):
 	def __init__(self):
@@ -14,11 +15,12 @@ class MyApp(QMainWindow):
 		self.show()
 	def generate(self):
 		self.passwordlength = self.ui.passLine.text()
+		self.password = Algorithm.generator(self.passwordlength)
+		self.ui.password.setText(self.password)
 		self.ui.label.setText("")
 
 	def copy(self):
-		self.password = self.ui.password.text()
-		pyperclip.copy(self.password)
+		pyperclip.copy(self.ui.password.text())
 		self.ui.label.setText("Copied!")
 
 if __name__ == '__main__':

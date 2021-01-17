@@ -2,7 +2,6 @@ import secrets
 
 
 def generator(password_len):
-    password_len = int(input("Enter Password Length: "))
     # defining  variables with all the available character
     lower = "abcdefghijklmnopqrstuvwxyz"
     upper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
@@ -17,3 +16,5 @@ def generator(password_len):
         password_str += password
 
     return password_str
+
+
