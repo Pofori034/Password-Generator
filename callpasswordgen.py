@@ -11,17 +11,21 @@ class MyApp(QMainWindow):
 		self.ui.setupUi(self)
 		self.ui.generateButton.clicked.connect(self.generate)
 		self.ui.copyButton.clicked.connect(self.copy)
+		self.ui.statusbar.showMessage("Ready")
 
 		self.show()
 	def generate(self):
-		self.passwordlength = self.ui.passLine.text()
+		if self.ui.passLine.text() == "":
+			self.passwordlength = 0
+		else:
+			self.passwordlength = self.ui.passLine.text()
 		self.password = Algorithm.generator(self.passwordlength)
 		self.ui.password.setText(self.password)
-		self.ui.label.setText("")
+		self.ui.statusbar.showMessage("New Password Generated")
 
 	def copy(self):
 		pyperclip.copy(self.ui.password.text())
-		self.ui.label.setText("Copied!")
+		self.ui.statusbar.showMessage("Copied to Clipboard")
 
 if __name__ == '__main__':
 	app = QApplication(sys.argv)
