@@ -1,0 +1,68 @@
+QTabBar::tab{
+	color:white;
+	background-color:rgb(170,130, 255);
+	height:20px;
+	border-top-left-radius:10px;
+	border-top-right-radius:10px;
+	margin:2px;
+	margin-bottom: 0px;
+	padding:2px;
+}
+
+QTabWidget::pane{
+	border: 1px solid  rgb(230, 209, 118);
+	background-image: url(:/image/bg.jpg);
+}
+
+QTabBar::tab:selected{
+	color:black;
+	background-image: url(:/image/bg.jpg);
+}
+
+QSpinBox::up-button:pressed{
+	background-color:rgb(170,130,255);
+}
+
+QSpinBox::down-button:pressed{
+	background-color:rgb(170,130,255);
+}
+
+QSpinBox{
+	border: 1px solid rgb(170,130,255);
+	border-top-left-radius:10px;
+	border-bottom-left-radius:10px;
+	margin:2px;
+	padding:2px;
+}
+
+QPushButton{
+	color:white;
+	border: 1px solid rgb(170,130,255);
+	border-radius:5px;
+	height:20px;
+	background-color: rgb(170,130,255);
+}
+
+QPushButton:pressed{
+	background-color:rgb(170,200,255);
+	border: 1px solid rgb(170,200,255);
+}
+
+QLineEdit{
+	border: 1px solid rgb(170,130,255);
+	border-radius:10px;
+	margin:2px;
+	padding:2px;
+}
+
+QLabel{
+	font: 10pt "MS Shell Dlg 2";
+} 
+
+#editaccountButton,#copypasswordButton,#openURLButton,#copyusernameButton{
+	width:60px;
+}
+
+QDialog{
+	background-image: url(:/image/bg.jpg);
+}
